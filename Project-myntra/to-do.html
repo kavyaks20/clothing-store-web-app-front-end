@@ -1,0 +1,231 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clothing Store - Product</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Cart and Wishlist Icon Section -->
+  <div class="cart-container">
+    <span class="cart-icon">&#128722;</span>
+    <span class="cart-count">0</span>
+  </div>
+
+  <div class="wishlist-container">
+    <span class="wishlist-icon">&#9734;</span>  <!-- Star icon for wishlist -->
+    <span class="wishlist-count">0</span>
+  </div>
+
+  <div class="product-container">
+    <div class="product-images">
+      <div class="image-gallery">
+        <img class="main-image" src="./images/k1_1.jpg_2000Wx3000H" alt="Product Image 1">
+      </div>
+      <div class="thumbnail-gallery">
+        <img class="thumbnail" src="./images/k1_1.jpg_2000Wx3000H" alt="Thumbnail 1" onclick="changeImage('./images/k1_1.jpg_2000Wx3000H')">
+        <img class="thumbnail" src="./images/k2_1.jpg_2000Wx3000H" alt="Thumbnail 2" onclick="changeImage('./images/k2_1.jpg_2000Wx3000H')">
+        <img class="thumbnail" src="./images/k2_1.jpg_2000Wx3000H" alt="Thumbnail 3" onclick="changeImage('./images/k2_1.jpg_2000Wx3000H')">
+        <img class="thumbnail" src="i./images/k2_1.jpg_2000Wx3000H" alt="Thumbnail 4" onclick="changeImage('./images/k2_1.jpg_2000Wx3000H')">
+      </div>
+    </div>
+    <div class="product-info">
+      <h1>Product Title</h1>
+      <p class="description">A brief description of the product goes here.</p>
+      <p class="price">$99.99</p>
+      <button class="add-to-cart" onclick="addToCart()">Add to Cart</button>
+      <button class="add-to-wishlist" onclick="addToWishlist()">Add to Wishlist</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+<script>
+    let cartCount = 0; // Keeps track of the number of items in the cart
+let wishlistCount = 0; // Keeps track of the number of items in the wishlist
+
+function changeImage(image) {
+  const mainImage = document.querySelector('.main-image');
+  mainImage.src = image;
+}
+
+function addToCart() {
+  cartCount++; // Increase the cart count by 1
+  updateCartCount(); // Update the cart count on the page
+  alert("Item added to cart!");
+}
+
+function addToWishlist() {
+  wishlistCount++; // Increase the wishlist count by 1
+  updateWishlistCount(); // Update the wishlist count on the page
+  alert("Item added to wishlist!");
+}
+
+// Function to update the cart count
+function updateCartCount() {
+  const cartCountDisplay = document.querySelector('.cart-count');
+  cartCountDisplay.textContent = cartCount;
+}
+
+// Function to update the wishlist count
+function updateWishlistCount() {
+  const wishlistCountDisplay = document.querySelector('.wishlist-count');
+  wishlistCountDisplay.textContent = wishlistCount;
+}
+
+</script>
+<style>
+    /* General styles as before */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+.product-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.product-images {
+  width: 50%;
+}
+
+.image-gallery {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.main-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.thumbnail-gallery {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.thumbnail {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.thumbnail:hover {
+  transform: scale(1.1);
+}
+
+.product-info {
+  width: 40%;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.description {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.add-to-cart, .add-to-wishlist {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 10px;
+}
+
+.add-to-cart:hover, .add-to-wishlist:hover {
+  background-color: #0056b3;
+}
+
+/* Cart Icon Styles */
+.cart-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.cart-icon {
+  font-size: 24px;
+}
+
+.cart-count {
+  font-size: 16px;
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+/* Wishlist Icon Styles */
+.wishlist-container {
+  position: fixed;
+  top: 20px;
+  right: 80px;  /* Positioned next to the cart icon */
+  background-color: #FFD700;  /* Gold color for wishlist */
+  color: white;
+  padding: 10px 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.wishlist-icon {
+  font-size: 24px;
+}
+
+.wishlist-count {
+  font-size: 16px;
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+</style>

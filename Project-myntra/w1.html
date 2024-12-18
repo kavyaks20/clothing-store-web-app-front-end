@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+    <link rel="stylesheet" href="page02.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <!-- logo -->
+            <div class="logo">
+                <a href="#"><img src="../images/k.png"></a>
+            </div>
+
+            <!-- navigation links -->
+             <div class="nav-links">
+            <ul>
+                <li><a href="./page02.html">Home</a></li>
+                <li><a href="./women-cloth.html">Women</a></li>
+                <li><a href="./men-cloth.html">Men</a></li>
+                <li><a href="./kid-cloth.html">Kids</a></li>
+             </ul>
+             </div>
+            
+
+            <!-- search-bar -->
+             <div class="searchbar">
+                <input type="text" placeholder="Search..." id="search">
+                <button id="search-btn">Search</button>
+             </div>
+
+                  
+      <!-- Cart & Profile -->
+      <div class="cart-sec">
+        <span class="cart-icon">&#128722;</span>
+        <span class="cart-count">0</span>
+        <!-- <button id="profile-btn">👤</button> -->
+      </div>
+      <div class="wishlist-container">
+        <span class="wishlist-icon">&#9734;</span>  <!-- Star icon for wishlist -->
+        <span class="wishlist-count">0</span>
+      </div>
+    </nav>
+  </header>
+  <div class="top">
+
+  </div>
+
+
+  <div class="product-content">
+    <div class="product-images">
+      <div class="image-gallery">
+        <img class="main-image" src="./images/w1_1.webp" alt="Product Image 1">
+      </div>
+      <div class="thumbnail-gallery">
+        <img class="thumbnail" src="./images/w1_1.webp" alt="Thumbnail 1" onclick="changeImage('./images/w1_1.webp')">
+        <img class="thumbnail" src="./images/w1_2.webp" alt="Thumbnail 2" onclick="changeImage('./images/w1_2.webp')">
+        <img class="thumbnail" src="./images/w1_3.webp" alt="Thumbnail 3" onclick="changeImage('./images/w1_3.webp')">
+       
+      </div>
+    </div>
+    
+    <div class="product-info">
+      <h1>HONKY TONKY</h1>
+      <p class="description">Women V-Neck Tiered Dress
+      </p>
+      <p class="price">$99.99</p>
+      <button class="add-to-cart" onclick="addtocart()">Add to Cart</button>
+      <button class="add-to-wishlist" onclick="addToWishlist()">Add to Wishlist</button>
+    </div>
+  </div>
+    <div class="product__description rte"><p>Bright and stylish, this flowy dress combines comfort and elegance with a touch of modern design. The dress is crafted from Viscose lightweight fabric, perfect for all-day wear, with an eye-catching abstract line pattern in white over a deep black base, creating a chic, high-contrast look. Styled with Sweet Heart neckline and three-quarter length sleeves, this dress is easy to accessorize and pairs well with both heels and flats.</p>
+      <p><strong>PRODUCT DETAILS</strong></p>
+      <ul>
+      <li>Fabric: Viscose</li>
+      <li>Color: Black base with abstract white line pattern</li>
+      <li>Design: All-over abstract motif</li>
+      <li>Style: Umbrella dress</li>
+      <li>Sleeves: Three-quarter length<br>
+      </li>
+      <li>Length: 46 inches</li>
+      <li>Neckline: Round neckline</li>
+      <li>Ideal For: Casual outings, semi-formal events, and evening gatherings</li>
+      </ul>
+      <p><strong>SIZE &amp; FIT</strong></p>
+      <ul>
+      <li>Fit: Relaxed</li>
+      <li>Model Height: Approximately 5'8"</li>
+      <li>Model is wearing: Size S</li>
+      </ul></div>
+        
+       
+    
+
+    
+</body>
+
+
+<!-- footer -->
+<footer>
+    <p>© 2024 Kira. All rights reserved.</p>
+</footer>
+<style>
+    .cart button{
+        width: 90px;
+        height: 30px;
+        margin-left: 60px;
+    }
+</style>
+<script>
+  let cart = 0; // Initialize cart count
+  let wishlistCount = 0; // Initialize wishlist count
+
+
+  // change main image
+  function changeImage(image){
+
+    const mainImage= document.querySelector('.main-image');
+    mainImage.src = image;
+  }
+
+  // add to cart
+
+  function addtocart(){
+    cart++;
+    updateCartCount();
+    alert("item added to cart")
+  }
+  function addToWishlist() {
+  wishlistCount++; // Increase the wishlist count by 1
+  updateWishlistCount(); // Update the wishlist count on the page
+  alert("Item added to wishlist!");
+}
+// Function to update the cart count
+function updateCartCount() {
+  const cartCountDisplay = document.querySelector('.cart-count');
+  cartCountDisplay.textContent = cart;
+}
+// Function to update the wishlist count
+function updateWishlistCount() {
+  const wishlistCountDisplay = document.querySelector('.wishlist-count');
+  wishlistCountDisplay.textContent = wishlistCount;
+}
+
+
+</script>
+
+</html>
+<style>
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.top{
+  height: 20px;
+}
+.product-content{
+  display: flex;
+  justify-content: center;
+  
+}
+.product-images{
+  margin-left: 30px;
+  
+}
+.main-image{
+  width: 350px;
+  height: 500px;
+  gap:50px;
+  margin-bottom: 400px;
+  /* width: 100%; */
+  /* max-width: 500px; */
+  /* height: auto; */
+  /* border-radius: 8px; */
+  box-shadow: 0 4px 10px rgb(red, green, blue);
+}
+.product-info{
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  /* width: 20px; */
+  /* height: 20px; */
+  border-radius: 2px;
+
+}
+.image-gallery{
+  width: 50%;
+  height: 50%;}
+.thumbnail-gallery{
+  display: flex;
+  gap: 30px;
+    
+  }
+
+.thumbnail-gallery img{
+  width: 100px;
+  height: 100px;
+  
+  
+}
+.product__description{
+  display: block;
+  margin-left: 40px;
+  margin-right: 20px;
+  margin-bottom: 40px;
+}
+.product__description{
+  gap: 20px;
+}
+
+</style>

@@ -1,0 +1,111 @@
+
+*{
+    /* width: 100%; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    gap:20px;
+}
+.salediv{
+    width: 100%;
+    height: 60px;
+    background-color: #121010;
+    display: flex;
+    flex-direction: row;
+}
+.section1{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    
+}
+.main{
+    width: 100%;
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* align-items: center; */
+
+    /* height: 900px; */
+}
+.header{
+    width: 100%;
+    height: 80px;
+    background-color: papayawhip;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    right: 0;
+    left: 0;
+    gap:20px;
+    /* flex-direction: column; */
+}
+.logo img{
+    /* display: flex; */
+    width: 60px;
+    height: 50px;
+    margin: 20px;
+    
+
+
+}
+.main-categories ul{
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+.search{
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.search input{
+    width: 90%;
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #f5f5f6;
+
+
+}
+.search .xs{
+
+   position: absolute;
+   left: 700px;
+   top: 10px;
+   justify-content: center;
+   align-items: center;
+
+}
+
+.xd{
+    /* width: 100px */
+}
+.side-icons{
+    gap: 30px;
+    float: left;
+}
+.xi{
+    gap: 60px;
+}
+
+
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+
+
+.card-img{
+    display: flex;
+    flex-direction:row;
+    gap: 20px;
+    width: 400px;
+    height: 400px;
+
+}

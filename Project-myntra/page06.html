@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Click Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+            flex-direction: column;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px 0;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #counter {
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Button Click Counter</h1>
+    <button onclick="incrementCounter()">Click Me</button>
+    <p id="counter">Count: 0</p>
+
+    <script>
+        let count = 0;  // Initialize the counter variable
+
+        // Function to increment the counter
+        function incrementCounter() {
+            count++;  // Increase the count by 1
+            document.getnnerText = 'Count: ' + count;ElementById('counter').i  // Update the displayed count
+        }
+    </script>
+
+</body>
+</html>

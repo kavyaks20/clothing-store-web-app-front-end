@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+    <link rel="stylesheet" href="page02.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <!-- logo -->
+            <div class="logo">
+                <a href="#"><img src="../images/k.png"></a>
+            </div>
+
+            <!-- navigation links -->
+             <div class="nav-links">
+            <ul>
+                <li><a href="./page02.html">Home</a></li>
+                <li><a href="#">Women</a></li>
+                <li><a href="#">Men</a></li>
+                <li><a href="#">Kids</a></li>
+             </ul>
+             </div>
+            
+
+            <!-- search-bar -->
+             <div class="searchbar">
+                <input type="text" placeholder="Search..." id="search">
+                <button id="search-btn">Search</button>
+             </div>
+
+                  
+      <!-- Cart & Profile -->
+      <div class="cart-profile">
+        <button id="cart-btn">
+          <span class="cart-count" id="cart-count">0</span> 🛒
+        </button>
+        <!-- <button id="profile-btn">👤</button> -->
+      </div>
+    </nav>
+  </header>
+
+
+  <div class="login-head">
+
+    <h1>Login /Register</h1>
+    <br>
+
+    
+  </div>
+  <div class="login-body">
+  <!-- <div class="login-body"> -->
+    <div class="loginform" id="loginform">
+    <form action="/login " method="get" class="form-login">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <input type="submit" value="Login">
+        </form>
+        <p>Don't have an account? <a href="#" onclick="changeform()">Register</a></p>
+    </div>
+
+        <div class="registerform" id="registerform">
+            <form action="#" method="get" class="form-login2">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <br>
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+                <br>
+                <input type="submit" value="Register">
+                
+            </form>
+            <p>have account? <a href="#" onclick="changeform()">Login</a></p>
+
+        </div>
+  
+</div>
+    
+</body>
+
+
+<!-- footer -->
+<footer>
+    <p>© 2024 Kira. All rights reserved.</p>
+</footer>
+
+</html>
+
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .login-head{
+        background-color:beige;
+        height: 40px;
+        margin-top: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .login-body{
+        background-color: beige;
+        height: 400px;
+    }
+    .loginform{
+         display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* justify-content: center; */
+        /* margin-top: 30px; */
+        
+        /* gap: 20px; */
+    }
+     .form-login{
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        gap: 5px;
+
+    }
+    .form-login2{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* gap: 5px; */
+
+    }
+
+
+    .registerform{
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+  
+</style>
+<script>
+    function changeform(){
+        let login = document.getElementById("loginform");
+        let register = document.getElementById("registerform");
+        if(login.style.display == "none"){
+            register.style.display = "none";
+            login.style.display = "block";
+        }
+        else{
+            register.style.display = "block";
+            login.style.display = "none";
+            }
+    
+        
+        }
+
+    
+</script>
